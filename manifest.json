@@ -4,7 +4,7 @@
 		"description": "Volumetric lighting only works on the terrain surface, during the rain or snow. It's recommended to configure ray marching distance by pressing a cog button.",
 		"name": "Rainy Day - volumetric lighting shader demo",
 		"uuid": "c196c7ba-bf81-4756-974f-1ab310ad9657",
-		"version": [0, 0, 1],
+		"version": [1, 0, 0],
 		"min_engine_version": [1, 13, 0]
 	},
 	"modules": [
@@ -12,7 +12,7 @@
 			"description": "",
 			"type": "resources",
 			"uuid": "9ea1f5d1-5a16-4afc-bab6-3226b23c7df6",
-			"version": [0, 0, 1]
+			"version": [1, 0, 0]
 		}
 	],
 	"subpacks": [
