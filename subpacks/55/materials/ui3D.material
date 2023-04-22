@@ -1,0 +1,51 @@
+{
+	"materials": {
+		"version": "1.0.0",
+		"rain": {
+			"+defines": ["RAY_MARCHING_DISTANCE 55"],
+			"+states": [
+				"DisableDepthWrite",
+				"DisableDepthTest",
+				"StencilWrite",
+				"EnableStencilTest"
+			],
+			"depthFunc": "Always",
+			"vertexShader": "shaders/rain_snow.vertex",
+			"vrGeometryShader": "shaders/rain_snow.geometry",
+			"fragmentShader": "shaders/rain_snow.fragment",
+			"vertexFields": [
+				{ "field": "UV0" }
+			],
+			"msaaSupport": "NonMSAA",
+			"+samplerStates": [
+				{
+					"samplerIndex": 0,
+					"textureFilter": "Point"
+				},
+				{
+					"samplerIndex": 1,
+					"textureFilter": "Point"
+				},
+				{
+					"samplerIndex": 2,
+					"textureFilter": "Bilinear"
+				}
+			],
+			
+			"frontFace": {
+				"stencilFunc": "NotEqual",
+				"stencilPassOp": "Replace"
+			},
+		
+			"backFace": {
+				"stencilFunc": "NotEqual",
+				"stencilPassOp": "Replace"
+			},
+		
+			"stencilRef": 2,
+			"stencilReadMask": 2,
+			"stencilWriteMask": 2
+		},
+		"snow:rain": {}
+	}
+}

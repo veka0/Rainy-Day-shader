@@ -1,0 +1,14 @@
+#version 300 es
+precision highp float;
+
+#include "uniformWorldConstants.h"
+
+in vec2 TEXCOORD_0;
+out vec3 viewPosition;
+
+void main()
+{
+	vec4 pos = vec4(2.0*TEXCOORD_0-1.0, 0, 1);
+	gl_Position = gl_VertexID > 3 ? vec4(-1) : pos;
+	viewPosition = (inverse(PROJ) * pos).xyz;
+}
